@@ -1,0 +1,11 @@
+#!/bin/bash
+
+STR=$1
+
+if [ $# != 1 ]; then
+  echo "Transform from config.case to SNAME_CASE."
+  echo "Usage: c2s [target string]"
+  exit 1
+fi
+
+echo $STR|sed 's/\(.*\)/\U\1/'|sed 's/[\.]/_/g'
